@@ -3,36 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Speech Notes</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
     <div class="container">
-
         <h1>🎤 Speech Notes</h1>
+        <p class="subtitle">Speak your thoughts. Keep your notes forever.</p>
 
-        <p>Click the button and start speaking.</p>
+        <div class="buttons">
+            <button id="startBtn">Start Speaking</button>
+            <button id="stopBtn">Stop</button>
+            <button id="newBtn">New Note</button>
+        </div>
 
-        <button id="startBtn">Start Speaking</button>
+        <p id="status">Ready to record</p>
 
-        <button id="stopBtn">Stop</button>
-        
-<button id="newNoteBtn">New Note</button>
+        <input
+            type="text"
+            id="noteTitle"
+            placeholder="Enter note title..."
+            aria-label="Note title"
+        >
 
-        <textarea 
-            id="notes"
+        <textarea
+            id="noteText"
             placeholder="Your speech will appear here..."
+            aria-label="Speech note content"
         ></textarea>
 
-        <button id="clearBtn">Clear Notes</button>
+        <div class="buttons">
+            <button id="saveBtn">Save Note</button>
+            <button id="deleteBtn" class="danger">Delete Current Note</button>
+        </div>
 
+        <section class="saved-section">
+            <h2>📚 My Saved Notes</h2>
+            <p class="hint">Your notes are saved automatically on this device.</p>
+            <div id="savedNotes"></div>
+        </section>
+
+        <button id="clearAllBtn" class="danger clear-all">
+            Delete All Notes
+        </button>
     </div>
 
     <script src="script.js"></script>
-
 </body>
 </html>

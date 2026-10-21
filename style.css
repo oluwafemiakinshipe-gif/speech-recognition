@@ -1,65 +1,172 @@
+
+* {
+    box-sizing: border-box;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    background: #bc48d1;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    min-height: 100vh;
     margin: 0;
-}
-
-.container {
-    background: white;
-
-    width: 500px;
-    padding: 30px;
-
-    border-radius: 15px;
-
-    text-align: center;
-
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
+    min-height: 100vh;
+    padding: 30px 15px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #e040fb, #8e24aa);
     color: #333;
 }
 
-p {
-    color: #666;
+.container {
+    max-width: 750px;
+    margin: 30px auto;
+    padding: 35px;
+    background: #fffdf8;
+    border-radius: 22px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+}
+
+h1 {
+    text-align: center;
+    color: #596b7b;
+    font-size: 36px;
+    margin-top: 0;
+}
+
+.subtitle {
+    text-align: center;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 18px 0;
 }
 
 button {
     padding: 12px 20px;
-
-    margin: 5px;
-
     border: none;
-    border-radius: 8px;
-
-    background: #333;
+    border-radius: 9px;
+    background: #657987;
     color: white;
-
     cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s, transform 0.2s;
 }
 
 button:hover {
-    background: #e52bcf;
+    background: #435968;
+    transform: translateY(-1px);
 }
 
-textarea {
-    width: 95%;
-    height: 250px;
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
 
-    margin-top: 20px;
-    padding: 10px;
+.danger {
+    background: #c0392b;
+}
 
+.danger:hover {
+    background: #922b21;
+}
+
+#status {
+    text-align: center;
+    color: #657987;
+    font-size: 14px;
+    min-height: 18px;
+}
+
+#noteTitle,
+#noteText {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin-top: 15px;
+    border: 1px solid #d6d6d6;
+    border-radius: 10px;
+    font-family: inherit;
     font-size: 16px;
+    outline-color: #b04bd3;
+}
 
-    border: 1px solid #ccc;
-    border-radius: 8px;
+#noteText {
+    min-height: 220px;
+    resize: vertical;
+    line-height: 1.6;
+}
 
-    resize: none;
+.saved-section {
+    margin-top: 35px;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.saved-section h2 {
+    color: #596b7b;
+    font-size: 23px;
+}
+
+.hint {
+    color: #777;
+    font-size: 13px;
+}
+
+.note-card {
+    padding: 15px;
+    margin: 12px 0;
+    background: #f2edf5;
+    border-radius: 10px;
+    border-left: 4px solid #a64ac9;
+}
+
+.note-card h3 {
+    margin: 0 0 8px;
+    overflow-wrap: anywhere;
+}
+
+.note-card p {
+    color: #666;
+    font-size: 13px;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+}
+
+.note-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.note-actions button {
+    padding: 8px 12px;
+    font-size: 13px;
+}
+
+.empty-message {
+    color: #888;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.clear-all {
+    display: block;
+    margin: 25px auto 0;
+}
+
+@media (max-width: 500px) {
+    .container {
+        padding: 22px 16px;
+        margin: 10px auto;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    button {
+        padding: 11px 14px;
+    }
 }
